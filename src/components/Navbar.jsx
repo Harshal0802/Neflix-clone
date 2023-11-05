@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
-  const navigation = useNavigate();
+  const navigate = useNavigate();
   const transitionNavBar = () => {
     if (window.scrollY > 100) {
       setShow(true);
@@ -22,12 +22,19 @@ const Navbar = () => {
   return (
     <div className={`navbar ${show && "navbar_black"}`}>
       <div className="navbar_container">
-        <img className="nav_logo" src={Netflix} alt="Neflix" />
+        <img
+          className="nav_logo"
+          src={Netflix}
+          alt="Neflix"
+          onClick={() => {
+            navigate("/");
+          }}
+        />
         <img
           className="nav_avatar"
           src={Avatar}
           alt="Avatar"
-          onClick={() => navigation("/profile")}
+          onClick={() => navigate("/profile")}
         />
       </div>
     </div>

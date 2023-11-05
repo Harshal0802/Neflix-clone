@@ -6,11 +6,8 @@ import requests from "../config/Requests";
 const HomeScreen = () => {
   return (
     <div>
-      {/* Nav */}
       <Navbar />
-      {/* Banner */}
       <Banner />
-      {/* Row */}
       <Row
         title="NETFLIX ORIGINALS"
         fetchUrl={requests.fetchNetFlixOriginals}
